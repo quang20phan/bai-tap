@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+// import Category from './components/Category';
+// import Header from './components/Header';
+import ScreenLoginFB from './screens/ScreenLoginFB';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+
+    <ScreenLoginFB />
+
+    <StatusBar style="auto" />
     </View>
   );
 }
@@ -14,7 +20,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start'
   },
 });
