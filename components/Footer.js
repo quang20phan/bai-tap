@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Button, TextInput, SafeAreaView} from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 export default function (){
+    const navigation = useNavigation();
     return (
         <View>
             <View style={styles.container}>
@@ -12,7 +13,10 @@ export default function (){
             </View>
 
             <View style={styles.btn}>
-            <Button title="Tạo tài khoản mới " color={'#aaa'}></Button>
+                <Button title="Tạo tài khoản mới " color={'#aaa'}
+                     onPress={()=> navigation.navigate('ScreenRegister')}>
+
+                </Button>
             </View>
         </View>
         
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
    },
 
    container: {
-    marginTop: 100,
+    marginTop: 80,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
