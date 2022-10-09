@@ -13,7 +13,7 @@ export default function() {
 
             <Banner />
             <Input />
-            <ListButton />
+            {/* <ListButton /> */}
             <Footer />
             
         </View>

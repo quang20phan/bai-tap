@@ -1,12 +1,32 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import { View, Text, Image, StyleSheet, Button, TextInput, SafeAreaView} from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function (){
     return (
         <View style= {styles.list__btn}>
 
             <View>
-                <Button title="Đăng nhập"></Button>
+                <Button title="Đăng nhập"
+                     onPress={async () => {
+                        if (email.length == 0 || pass.length == 0) {
+                            Alert.alert('Cảnh báo !', 'Xin mời nhập thông tin.')
+                        } else {
+                            try {
+                                var user = {
+                                    Email: email,
+                                    Pass: pass
+                                }
+                                await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                                navigation.navigate('ScreenHome');
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        }
+                    }}>
+
+                    </Button>
 
             </View>
 
